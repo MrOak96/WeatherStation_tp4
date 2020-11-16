@@ -24,7 +24,7 @@ namespace OpenWeatherAPITests
             _sut = OpenWeatherProcessor.Instance;
             _sut.ApiKey = null;
             //_sut.ApiKey = "";
-            Assert.ThrowsAsync<ArgumentException>(() => _sut.GetCurrentWeatherAsync());
+            await Assert.ThrowsAsync<ArgumentException>(() => _sut.GetCurrentWeatherAsync());
         }
 
         [Fact]
